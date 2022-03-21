@@ -1,10 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
 
+import router from './router';
+
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.use(router);
 
 mongoose
   .connect(
